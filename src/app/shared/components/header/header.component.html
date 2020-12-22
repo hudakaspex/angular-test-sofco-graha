@@ -1,0 +1,22 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+	<div class="container">
+		<a class="navbar-brand" href="#">
+			<h3>Book Store</h3>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<ng-container *ngFor="let menu of menus">
+					<li class="nav-item {{menu.status}}">
+						<a class="nav-link" style="cursor: pointer" (click)="onRoute(menu)">{{menu.label}}
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</ng-container>
+			</ul>
+		</div>
+	</div>
+</nav>

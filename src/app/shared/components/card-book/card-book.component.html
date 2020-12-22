@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+	<div align="center" style="background: #bfd6f7">
+		<img class="card-img-top" style="width: 40%; margin-top: 5%;" [src]="book.getImgUrl" alt="Card image cap">
+  </div>
+		<div class="card-body">
+			<h5 class="card-title">{{book.getTitle}}</h5>
+			<h6 class="card-subtitle mb-2 text-muted">{{book.getAuthor}}</h6>
+			<p class="card-text">{{book.getPrice | currency:'Rp. ':'symbol'}}</p>
+			<ng-container *ngIf="book.getStok !== 0; else ADDED">
+				<button style="font-size: 1vw" (click)="onEvent(book)" class="btn btn-primary">Add To Cart</button>
+			</ng-container>
+			<ng-template #ADDED>
+				<button style="font-size: 1vw" disabled class="btn btn-danger">Added</button>
+			</ng-template>
+		</div>
+	</div>
